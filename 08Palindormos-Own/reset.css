@@ -1,0 +1,67 @@
+/* Reset CSS básico */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho y alto del elemento */
+}
+
+html {
+  font-size: 100%; /* Configura el tamaño base de fuente para un cálculo relativo */
+  line-height: 1.5; /* Mejora la legibilidad */
+  -webkit-text-size-adjust: 100%; /* Evita el ajuste de texto en dispositivos móviles */
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+body {
+  min-height: 100vh; /* Asegura que el body ocupe al menos toda la pantalla */
+  text-rendering: optimizeSpeed; /* Mejora el rendimiento del renderizado de texto */
+  font-family: sans-serif; /* Define una fuente predeterminada */
+  background-color: #fff; /* Fondo blanco por defecto */
+  color: #000; /* Texto negro por defecto */
+}
+
+/* Estilos básicos para listas sin estilos de bullets ni márgenes */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Enlaces sin subrayado ni color por defecto */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Imágenes y medios con tamaño adaptable */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Elimina el estilo de borde por defecto en elementos de formulario */
+input,
+textarea,
+select {
+  font: inherit; /* Usa la misma fuente que el elemento padre */
+  border: none;
+  outline: none;
+}
+
+/* Configura un estilo básico para los botones */
+button {
+  cursor: pointer;
+  background: none;
+}
+
+/* Elimina el scroll por defecto en contenedores con scroll */
+:where([hidden]) {
+  display: none;
+}
