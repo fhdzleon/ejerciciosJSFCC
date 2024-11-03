@@ -8,13 +8,30 @@ const getValueInput = () => {
   return value;
 };
 
+const checkPalindrome = (str) => {
+  let myStr = str;
+
+  let readyForCheck = str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+  let reverse = readyForCheck.split("").reverse().join("");
+
+  if (readyForCheck === reverse) {
+    console.log("si es palindormo");
+
+    return `${myStr} is a palindrome`;
+  }
+  console.log("no es palindormo");
+  return `${myStr} is not a palindrome`;
+};
+
 const verify = () => {
   const input = getValueInput();
 
   if (input.length === 0) {
-    alert("ingresa algo wey!");
+    alert("Please input a value");
   } else {
-    alert("hay vas papi");
+    const response = checkPalindrome(input);
+    respuesta.textContent = response;
+    palindroInput.value = "";
   }
 };
 

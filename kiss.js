@@ -1,19 +1,12 @@
-//! Sin KISS-->
+const checkPalindrome = (str) => {
+  let readyForCheck = str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+  let reverse = readyForCheck.split("").reverse().join("");
 
-function calcularTotal(precios, descuentos, impuestos) {
-  return precios.reduce(
-    (total, precio, i) =>
-      total + precio - descuentos[i] + precio * impuestos[i],
-    0
-  );
-}
-
-//* Aplicando KISS-->
-
-function calcularTotal(precios, descuentos, impuestos) {
-  let total = 0;
-  for (let i = 0; i < precios.length; i++) {
-    total += precios[i] - descuentos[i] + precios[i] * impuestos[i];
+  if (readyForCheck === reverse) {
+    return "palindormo";
   }
-  return total;
-}
+  return "No es palindromo";
+};
+
+console.log(checkPalindrome("El agua! no_esta Lista"));
+console.log(checkPalindrome("Anita lava la tina"));
